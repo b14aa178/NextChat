@@ -456,7 +456,7 @@ export const useChatStore = createPersistStore(
           ]);
         });
 
-        const api: ClientApi = getClientApi(modelConfig.providerName);
+        const api: ClientApi = getClientApi(useAccessStore.getState().provider);
         // make request
         api.llm.chat({
           messages: sendMessages,
