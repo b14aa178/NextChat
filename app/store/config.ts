@@ -46,8 +46,8 @@ export const DEFAULT_CONFIG = {
   fontSize: 14,
   fontFamily: "",
   theme: Theme.Auto as Theme,
-  tightBorder: !!config?.isApp,
-  sendPreviewBubble: true,
+  tightBorder: true,
+  sendPreviewBubble: false,
   enableAutoGenerateTitle: true,
   sidebarWidth: DEFAULT_SIDEBAR_WIDTH,
 
@@ -57,10 +57,11 @@ export const DEFAULT_CONFIG = {
 
   disablePromptHint: false,
 
-  dontShowMaskSplashScreen: false, // dont show splash screen when create chat
-  hideBuiltinMasks: false, // dont add builtin masks
+  dontShowMaskSplashScreen: true, // dont show splash screen when create chat
+  hideBuiltinMasks: true, // dont add builtin masks
 
-  customModels: "",
+  customModels:
+    "accounts/fireworks/models/deepseek-r1,accounts/fireworks/models/deepseek-v3",
   models: DEFAULT_MODELS as any as LLMModel[],
 
   modelConfig: {
@@ -76,7 +77,7 @@ export const DEFAULT_CONFIG = {
     compressMessageLengthThreshold: 1000,
     compressModel: "",
     compressProviderName: "",
-    enableInjectSystemPrompts: true,
+    enableInjectSystemPrompts: false,
     template: config?.template ?? DEFAULT_INPUT_TEMPLATE,
     size: "1024x1024" as ModelSize,
     quality: "standard" as DalleQuality,

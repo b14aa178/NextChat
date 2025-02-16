@@ -246,20 +246,18 @@ export function getHeaders(ignoreHeaders: boolean = false) {
   const clientConfig = getClientConfig();
 
   function getConfig() {
-    const modelConfig = chatStore.currentSession().mask.modelConfig;
-    const isGoogle = modelConfig.providerName === ServiceProvider.Google;
-    const isAzure = modelConfig.providerName === ServiceProvider.Azure;
-    const isAnthropic = modelConfig.providerName === ServiceProvider.Anthropic;
-    const isBaidu = modelConfig.providerName == ServiceProvider.Baidu;
-    const isByteDance = modelConfig.providerName === ServiceProvider.ByteDance;
-    const isAlibaba = modelConfig.providerName === ServiceProvider.Alibaba;
-    const isMoonshot = modelConfig.providerName === ServiceProvider.Moonshot;
-    const isIflytek = modelConfig.providerName === ServiceProvider.Iflytek;
-    const isDeepSeek = modelConfig.providerName === ServiceProvider.DeepSeek;
-    const isXAI = modelConfig.providerName === ServiceProvider.XAI;
-    const isChatGLM = modelConfig.providerName === ServiceProvider.ChatGLM;
-    const isSiliconFlow =
-      modelConfig.providerName === ServiceProvider.SiliconFlow;
+    const isGoogle = accessStore.provider === ServiceProvider.Google;
+    const isAzure = accessStore.provider === ServiceProvider.Azure;
+    const isAnthropic = accessStore.provider === ServiceProvider.Anthropic;
+    const isBaidu = accessStore.provider == ServiceProvider.Baidu;
+    const isByteDance = accessStore.provider === ServiceProvider.ByteDance;
+    const isAlibaba = accessStore.provider === ServiceProvider.Alibaba;
+    const isMoonshot = accessStore.provider === ServiceProvider.Moonshot;
+    const isIflytek = accessStore.provider === ServiceProvider.Iflytek;
+    const isDeepSeek = accessStore.provider === ServiceProvider.DeepSeek;
+    const isXAI = accessStore.provider === ServiceProvider.XAI;
+    const isChatGLM = accessStore.provider === ServiceProvider.ChatGLM;
+    const isSiliconFlow = accessStore.provider === ServiceProvider.SiliconFlow;
     const isEnabledAccessControl = accessStore.enabledAccessControl();
     const apiKey = isGoogle
       ? accessStore.googleApiKey
