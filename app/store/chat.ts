@@ -677,7 +677,7 @@ export const useChatStore = createPersistStore(
               session.mask.modelConfig.model,
               session.mask.modelConfig.providerName,
             );
-        const api: ClientApi = getClientApi(providerName as ServiceProvider);
+        const api: ClientApi = getClientApi(useAccessStore.getState().provider);
 
         // remove error messages if any
         const messages = session.messages;
